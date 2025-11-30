@@ -1,0 +1,6 @@
+title: Pooja Patel Portfolio
+description: AI/ML Researcher Portfolio
+theme: jekyll-theme-prime
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

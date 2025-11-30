@@ -1,0 +1,272 @@
+--- ---
+/* =========================================
+   1. GLOBAL VARIABLES & UTILS
+   ========================================= */
+$red: #f33;
+$red2: desaturate(darken($red, 15%), 18%);
+$buttonHeight: 54;
+
+/* Font definitions (if not imported in HTML, ensure you have these) */
+// @import url('https://fonts.googleapis.com/css?family=Chewy|Didact+Gothic');
+
+/* =========================================
+   2. LATEX / ACADEMIC THEME BASE
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+    /* Fallback */
+    background-color: #fff;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px 10%;
+    background: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+
+    li a {
+        text-decoration: none;
+        color: #b00;
+        /* Accent color fallback */
+        font-family: monospace;
+        font-size: 0.9rem;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* Intro Section */
+.intro {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+
+    h1 {
+        font-family: monospace;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: normal;
+    }
+
+    h2 {
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: #666;
+        margin-top: 0;
+        font-style: italic;
+    }
+
+    p {
+        font-size: 1.1rem;
+        max-width: 100%;
+        margin: 20px 0;
+        line-height: 1.6;
+    }
+}
+
+/* =========================================
+   3. 3D INTERACTIVE BUTTON COMPONENT
+   ========================================= */
+
+/* A specific wrapper to center the button only within its own section */
+.interactive-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    /* Vertical breathing room */
+    position: relative;
+    transform: scale(1.1);
+    /* Slight zoom for emphasis */
+}
+
+/* The Container for the button elements */
+.quick-links {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    /* Puts text below label */
+    align-items: center;
+}
+
+/* Hide the actual checkbox */
+input[type="checkbox"]#button {
+    display: none;
+}
+
+/* The 3D Button Style */
+label.bevel {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 #{$buttonHeight/2 + 5 + "px"};
+    height: #{$buttonHeight + "px"};
+    background: $red linear-gradient(to bottom, $red 50%, $red2 50%);
+    color: #fff;
+    font-family: "Chewy", cursive;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    outline: 0 !important;
+    transition: all 0.2s ease-in-out;
+    box-shadow:
+        0px 15px 25px -10px rgba(#000, 0.5),
+        inset 0px -27px 0px 0px $red2;
+    text-shadow: 0px 3px 5px $red2;
+    z-index: 5;
+    /* Ensure button stays above other elements */
+
+    /* The Side Triangles */
+    &:before,
+    &:after {
+        content: " ";
+        width: #{$buttonHeight/2 + "px"};
+        max-width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transition: all 0.135s cubic-bezier(0.74, 0.16, 0.24, 0.92);
+        transition-delay: 0.15s;
+    }
+
+    &:before {
+        left: 0;
+        background: linear-gradient(45deg, transparent 66%, rgba($red, 1) 66%), linear-gradient(to right, $red, $red2);
+    }
+
+    &:after {
+        right: 0;
+        background: linear-gradient(-45deg, transparent 66%, rgba($red, 1) 66%), linear-gradient(to left, $red, $red2);
+    }
+
+    /* Hover State */
+    &:hover {
+        transform: scale(1.05);
+        box-shadow:
+            0px 25px 40px -5px rgba(#000, 0.3),
+            inset 0px -27px 0px 0px $red2;
+    }
+}
+
+/* The "Let's Grow" Text */
+.quick-links span {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Didact Gothic", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    z-index: 1;
+    transition: all 0.45s cubic-bezier(0.74, 0.16, 0.24, 0.92);
+    transition-delay: 0.135s;
+}
+
+/* =========================================
+   4. ACTIVE STATE (Checkmark Logic)
+   ========================================= */
+
+/* When Checked: Transform the Button */
+input#button:checked~label.bevel {
+    padding: 0 #{$buttonHeight/4 + 5 + "px"};
+    background: rgba($red, 0);
+    /* Transparent */
+    box-shadow: inset 0px 0px 0px 4px $red;
+    /* Red outline */
+    color: $red;
+    transform: scale(0.8) rotate(-6deg);
+    border-radius: 10px;
+    font-size: 24px;
+
+    /* Move sides away */
+    &:before {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+
+    &:after {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+}
+
+/* When Checked: Move the "Let's Grow" text down */
+input#button:checked~span {
+    transform: translateY(70px);
+    opacity: 0.3;
+}
+
+/* =========================================
+   5. POP-UP LINKS (The Requested Feature)
+   ========================================= */
+.sub-links {
+    /* Hidden State */
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: -60px;
+    /* Position below button */
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px) scale(0.8);
+
+    /* Layout */
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.6, -0.9, 0.39, 1.65);
+
+    a {
+        text-decoration: none;
+        font-family: "Chewy", cursive;
+        color: white;
+        background: $red;
+        padding: 8px 16px;
+        border-radius: 6px;
+        box-shadow: 0px 4px 0px $red2;
+        font-size: 18px;
+        white-space: nowrap;
+        transition: transform 0.1s;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+
+        &:active {
+            transform: translateY(3px);
+            box-shadow: 0px 1px 0px $red2;
+        }
+    }
+}
+
+/* Reveal State: When input is checked */
+input#button:checked~.sub-links {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0px) scale(1);
+    transition-delay: 0.15s;
+}
