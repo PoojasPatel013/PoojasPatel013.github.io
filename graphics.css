@@ -1,0 +1,60 @@
+/* Shared Graphics Styles - LaTeX Theme */
+:root {
+    --primary-font: 'Courier New', Courier, monospace;
+    --secondary-font: 'Times New Roman', Times, serif;
+
+    /* Minimal Color Palette */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --accent-color: #F05D5D;
+    /* Kept the red accent from request */
+    --light-text: #666666;
+
+    --spacing-unit: 20px;
+}
+
+/* General */
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--secondary-font);
+    line-height: 1.6;
+}
+
+/* Minimal Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Utility Classes */
+.mono {
+    font-family: var(--primary-font);
+}
+
+.serif {
+    font-family: var(--secondary-font);
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+/* Removed: Complex Color Switcher & Gooey Pagination */
+/* We can keep a simple theme toggle if needed, but for now we stick to the static paper look */

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Pooja Patel</title>
+    <link rel="stylesheet" href="graphics.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="projects.html" class="active-link">Projects</a></li>
+            <li><a href="cv.pdf" target="_blank">Resume</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container fade-in">
+        <h1>Projects</h1>
+
+        <!-- Project List (No Pagination) -->
+        <div class="project-display">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h2>Disaster Risk Prediction Platform</h2>
+                <p class="tech-stack">Python, Scikit-learn, Docker, Kubernetes, REST API</p>
+                <div class="details">
+                    <p>Architected and developed a full-stack disaster risk prediction platform, implementing a Random
+                        Forest Classifier in Python using Scikit-learn to predict event likelihood.</p>
+                    <p>Engineered a data ingestion pipeline to process and clean 5 GB of geospatial and meteorological
+                        data from public APIs, performing feature engineering to improve model performance.</p>
+                    <p>Deployed the application as a containerized service on Docker also using Kubernetes, providing a
+                        REST API for front-end visualization.</p>
+                </div>
+                <a href="#" class="view-btn">[View Project]</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h2>ChronoVault – Mental Wellness Platform</h2>
+                <p class="tech-stack">Python, MongoDB, GitHub Actions, AI</p>
+                <div class="details">
+                    <p>Designed and built a full-stack web application using a Python backend and MongoDB database to
+                        provide users with mental wellness tools and ethically-grounded AI engagement features.</p>
+                    <p>Developed a content recommendation engine by performing exploratory data analysis (EDA) on user
+                        interaction data to identify engagement patterns.</p>
+                    <p>Managed the complete software development lifecycle, including CI/CD pipelines with GitHub
+                        Actions for automated testing and deployment.</p>
+                </div>
+                <a href="#" class="view-btn">[View Project]</a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <h2> Privacy-First AI Personal Assistant</h2>
+            <span class="role">Developer & Architect</span>
+            <p class="tech-stack">Python, Google Agent Development Kit (ADK), Gemini API, Vertex AI</p>
+            <div class="details">
+                <p>Developed a "Human-in-the-Loop" (HITL) AI agent that prioritizes data privacy by requiring explicit
+                    user consent before storing sensitive long-term memories.</p>
+                <p>Architected a custom Long-Running Operation (LRO) workflow to pause agent execution upon detecting
+                    sensitive keywords (e.g., health data) and resume only after receiving user validation.</p>
+                <p>Implemented sophisticated context engineering and event compaction to ensure rejected data is
+                    immediately purged from short-term session history.</p>
+            </div>
+            <a href="#" class="view-btn">[View Project]</a>
+        </div>
+
+    </main>
+
+    <script src="graphics.js"></script>
+    <script src="projects.js"></script>
+</body>
+
+</html>

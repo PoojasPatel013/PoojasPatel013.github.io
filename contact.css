@@ -1,0 +1,86 @@
+/* Contact Page Styles - LaTeX Theme */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px 10%;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+.nav-links li a.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    font-size: 2rem;
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-family: var(--primary-font);
+    /* Monospace for contact info */
+}
+
+.contact-list li strong {
+    color: var(--text-color);
+    width: 120px;
+    display: inline-block;
+}
+
+.contact-list li a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.contact-list li a:hover {
+    text-decoration: underline;
+}

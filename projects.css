@@ -1,0 +1,123 @@
+/* Projects Page Styles - LaTeX Theme */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar (Copied from Index) */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px 10%;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+.nav-links li a.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    font-size: 2rem;
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* Project List - Minimal */
+.project-display {
+    margin-top: 20px;
+}
+
+.project-card {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 40px;
+    box-shadow: none;
+    border: none;
+    display: block;
+    /* Show all projects in a list, no pagination needed for few items */
+    animation: none;
+}
+
+.project-card h2 {
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.project-card .role {
+    display: block;
+    font-style: italic;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    font-family: var(--secondary-font);
+}
+
+.project-card .tech-stack {
+    font-family: var(--primary-font);
+    background: #f5f5f5;
+    padding: 2px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    color: var(--text-color);
+    font-size: 0.8rem;
+    border: 1px solid #ddd;
+}
+
+.project-card .details p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0;
+    background: none;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.view-btn:hover {
+    text-decoration: underline;
+    background: none;
+}
+
+/* Remove Pagination Styles */
+.da-pagination {
+    display: none;
+}
