@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingAnimation.style.display = 'none';
             noDataMessage.style.display = 'block';
             noDataMessage.classList.add('fade-in'); // Add fade-in effect
-        }, 5000); // 5 seconds
+        }, 2000); // 5 seconds
     }
 });
