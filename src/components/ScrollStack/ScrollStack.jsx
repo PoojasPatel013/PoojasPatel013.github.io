@@ -27,14 +27,14 @@ export const ScrollStackItem = ({ project, index, total }) => {
   return (
     <div 
       ref={cardRef} 
-      className="sticky top-0 flex items-center justify-center min-h-screen pb-12 pt-[100px]"
+      className="sticky top-0 flex items-center justify-center min-h-[90vh] pb-12 pt-[20px]"
     >
       <motion.div 
         style={{ 
           scale, 
           opacity, 
           // Stagger the final sticky position based on card index so they peek out
-          top: `calc(15vh + ${index * 20}px)` 
+          top: `calc(5vh + ${index * 20}px)` 
         }}
         className="scroll-stack-card relative flex flex-col justify-center w-full max-w-5xl bg-white rounded-[40px] p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] ring-1 ring-slate-900/5 origin-top will-change-transform"
       >

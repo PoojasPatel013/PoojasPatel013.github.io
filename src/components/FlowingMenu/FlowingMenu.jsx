@@ -48,19 +48,21 @@ const MenuItem = ({ text, href, index, hoveredIndex, setHoveredIndex }) => {
   );
 };
 
-const FlowingMenu = () => {
+const FlowingMenu = ({ items }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const links = [
+  const defaultLinks = [
     { text: 'GitHub', href: 'https://github.com/PoojasPatel013' },
     { text: 'LinkedIn', href: 'https://linkedin.com/in/poojapatel013' },
     { text: 'Email', href: 'mailto:poojaspatel1375@gmail.com' },
   ];
 
+  const menuItems = items || defaultLinks;
+
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
       <ul className="flex flex-col items-center justify-center w-full relative h-[400px]">
-        {links.map((link, i) => (
+        {menuItems.map((link, i) => (
           <MenuItem 
             key={link.text} 
             {...link} 
