@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import StaggeredMenu from '../components/StaggeredMenu/StaggeredMenu';
