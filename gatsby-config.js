@@ -20,7 +20,7 @@ module.exports = {
         background_color: '#fafafa',
         theme_color: '#1e293b',
         display: 'standalone',
-        // icon: 'src/images/favicon.png', // Uncomment when you have an icon
+        icon: 'src/images/favicon.png', // create a 512×512 PNG here
       },
     },
   ],
