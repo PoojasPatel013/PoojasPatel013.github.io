@@ -32,10 +32,12 @@ const SOCIALS = [
   },
 ];
 
+import { withPrefix } from 'gatsby';
+
 const FOLDER_ITEMS = [
   <span key="1" style={{ fontSize: 9, color: '#7c3aed', fontFamily: 'monospace' }}>portfolio.md</span>,
   <span key="2" style={{ fontSize: 9, color: '#9333ea', fontFamily: 'monospace' }}>research.pdf</span>,
-  <span key="3" style={{ fontSize: 9, color: '#a855f7', fontFamily: 'monospace' }}>'./static/assets/cv.pdf'</span>,
+  <a key="3" href={withPrefix('/assets/files/cv.pdf')} target="_blank" rel="noopener noreferrer" style={{ fontSize: 9, color: '#a855f7', fontFamily: 'monospace', textDecoration: 'underline', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = '#c084fc'} onMouseOut={(e) => e.target.style.color = '#a855f7'}>cv.pdf</a>,
 ];
 
 const CLI_LINES = [
