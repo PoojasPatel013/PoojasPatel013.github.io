@@ -31,11 +31,11 @@ const SkillsSection = () => {
           <FlowingMenu 
             items={SKILL_ITEMS}
             speed={15}
-            textColor="#0f172a" 
+            textColor="#e9d5ff"
             bgColor="transparent"
-            marqueeBgColor="#0f172a"
+            marqueeBgColor="#7c3aed"
             marqueeTextColor="#ffffff"
-            borderColor="#e2e8f0"
+            borderColor="rgba(168,85,247,0.3)"
           />
         </div>
       </div>

@@ -11,16 +11,17 @@ const HeroSection = () => {
           <img 
             src="/profile.jpg" 
             alt="Pooja Patel" 
-            className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
+            className="w-full h-full object-cover rounded-3xl"
+            style={{ boxShadow: '0 0 0 2px rgba(168,85,247,0.4), 0 20px 60px rgba(147,51,234,0.3)' }}
           />
-          {/* Subtle decorative backing */}
-          <div className="absolute inset-0 z-[-1] bg-slate-100 rounded-3xl -rotate-6 blur-lg opacity-50" />
+          {/* Neon glow backing */}
+          <div className="absolute inset-0 z-[-1] rounded-3xl -rotate-6 blur-2xl opacity-60" style={{ background: 'radial-gradient(ellipse, rgba(168,85,247,0.5), transparent)' }} />
         </div>
       </div>
 
       {/* Right Side (Typography) */}
       <div className="w-full md:w-1/2 flex flex-col justify-center">
-        <h1 className="font-outfit text-6xl md:text-8xl font-black tracking-tighter text-slate-800 leading-[0.9] mb-8">
+        <h1 className="font-outfit text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8" style={{ color: '#e9d5ff' }}>
           Pooja<br/>Patel<span className="text-slate-400">.</span>
         </h1>
         
@@ -31,7 +32,8 @@ const HeroSection = () => {
             direction="bottom"
             delay={80}
             stepDuration={0.8}
-            className="inline text-slate-600"
+            className="inline"
+            style={{ color: 'rgba(216,180,254,0.8)' }}
           />
         </div>
       </div>

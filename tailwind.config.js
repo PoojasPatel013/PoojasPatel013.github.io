@@ -8,10 +8,12 @@ module.exports = {
     extend: {
       colors: {
         slate: {
-          800: '#1E293B',    // Brand Dark
-          500: '#64748B',    // Brand Muted
+          800: '#e9d5ff',    // Brand text - soft lavender on dark
+          500: '#c084fc',    // Brand Muted - purple
+          400: '#d8b4fe',    // Brand Light text
+          300: '#f0abfc',    // Brand Faint
         },
-        offwhite: '#E8D5F5', // Brand Mauve Background
+        offwhite: '#0d0118', // Deep neon purple-black background
       },
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],

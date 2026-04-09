@@ -1,38 +1,210 @@
 import React from 'react';
-import FlowingMenu from '../FlowingMenu/FlowingMenu';
+import Folder from '../Folder/Folder';
 
-const CONTACT_LINKS = [
-  { link: 'https://github.com/PoojasPatel013', text: 'GitHub', image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=800&auto=format&fit=crop' },
-  { link: 'https://www.linkedin.com/in/pooja-p-77329933b/', text: 'LinkedIn', image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop' },
-  { link: 'mailto:poojaspatel1375@gmail.com', text: 'Email', image: 'https://images.unsplash.com/photo-1577563908411-50cb98976fea?q=80&w=800&auto=format&fit=crop' },
+const SOCIALS = [
+  {
+    label: 'GitHub',
+    href: 'https://github.com/PoojasPatel013',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/pooja-p-77329933b/',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'Email',
+    href: 'mailto:poojaspatel1375@gmail.com',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    ),
+  },
+];
+
+const FOLDER_ITEMS = [
+  <span key="1" style={{ fontSize: 9, color: '#7c3aed', fontFamily: 'monospace' }}>portfolio.md</span>,
+  <span key="2" style={{ fontSize: 9, color: '#9333ea', fontFamily: 'monospace' }}>research.pdf</span>,
+  <span key="3" style={{ fontSize: 9, color: '#a855f7', fontFamily: 'monospace' }}>cv.pdf</span>,
+];
+
+const CLI_LINES = [
+  { prompt: '~', cmd: 'whoami', out: 'pooja-patel' },
+  { prompt: '~', cmd: 'cat interests.txt', out: 'ML · Systems · Security · Cloud' },
+  { prompt: '~', cmd: 'open socials/', out: null },
 ];
 
 const ContactSection = () => {
   return (
-    <section id="connect" className="snap-section relative flex flex-col items-center justify-center px-6 md:px-12 min-h-screen">
-      <div className="w-full flex justify-between items-start mb-auto mt-24">
-        <h2 className="font-outfit text-xl md:text-3xl font-bold text-slate-400 uppercase tracking-widest">
-          Connect<span className="text-slate-300">.</span>
+    <section id="connect" className="snap-section relative flex flex-col px-6 md:px-16 min-h-screen overflow-hidden">
+
+      {/* Header */}
+      <div className="mt-24 mb-16">
+        <h2 className="font-outfit text-5xl md:text-7xl font-black tracking-tighter" style={{ color: '#e9d5ff' }}>
+          Connect<span style={{ color: '#7c3aed' }}>.</span>
         </h2>
+        <p className="font-inter text-base mt-2" style={{ color: 'rgba(196,148,255,0.6)' }}>
+          Let's build something exceptional together.
+        </p>
       </div>
 
-      <div className="flex-1 w-full flex items-center justify-center z-10 h-[500px] relative rounded-3xl overflow-hidden">
-        <FlowingMenu
-          items={CONTACT_LINKS}
-          speed={15}
-          textColor="#220d0dff"
-          bgColor="#E8D5F5"
-          marqueeBgColor="#ffffff"
-          marqueeTextColor="#0f172a"
-          borderColor="rgba(255,255,255,0.15)"
-        />
+      {/* Main content row */}
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20 flex-1">
+
+        {/* LEFT — CLI terminal + social links */}
+        <div className="flex flex-col gap-8 flex-1 min-w-0">
+
+          {/* Terminal card */}
+          <div
+            className="rounded-2xl p-6 font-mono text-sm"
+            style={{
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(168,85,247,0.2)',
+              backdropFilter: 'blur(12px)',
+            }}
+          >
+            {/* Terminal chrome */}
+            <div className="flex items-center gap-2 mb-5">
+              <div className="w-3 h-3 rounded-full" style={{ background: '#ff5f57' }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: '#febc2e' }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: '#28c840' }} />
+              <span className="ml-3 text-xs" style={{ color: 'rgba(196,148,255,0.4)' }}>pooja@portfolio ~ </span>
+            </div>
+
+            {CLI_LINES.map((line, i) => (
+              <div key={i} className="mb-3">
+                <div className="flex items-center gap-2">
+                  <span style={{ color: '#7c3aed' }}>❯</span>
+                  <span style={{ color: '#e9d5ff' }}>{line.cmd}</span>
+                </div>
+                {line.out && (
+                  <div className="mt-1 ml-5" style={{ color: 'rgba(196,148,255,0.7)' }}>{line.out}</div>
+                )}
+              </div>
+            ))}
+
+            {/* Social links as CLI output */}
+            <div className="mt-4 flex flex-col gap-3">
+              {SOCIALS.map(s => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 group transition-all duration-300"
+                  style={{ color: 'rgba(196,148,255,0.8)' }}
+                >
+                  <span style={{ color: '#7c3aed' }}>├─</span>
+                  <span className="group-hover:text-white transition-colors" style={{ color: 'rgba(196,148,255,0.9)' }}>
+                    {s.icon}
+                  </span>
+                  <span
+                    className="font-sans font-semibold tracking-wide group-hover:underline"
+                    style={{ color: 'rgba(233,213,255,0.9)', textDecorationColor: '#7c3aed' }}
+                  >
+                    {s.label}
+                  </span>
+                  <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-xs" style={{ color: '#7c3aed' }}>↗</span>
+                </a>
+              ))}
+            </div>
+
+            {/* Blinking cursor */}
+            <div className="mt-4 flex items-center gap-2">
+              <span style={{ color: '#7c3aed' }}>❯</span>
+              <span className="inline-block w-2 h-4 animate-pulse" style={{ background: '#a855f7' }} />
+            </div>
+          </div>
+        </div>
+
+        {/* CENTRE — Interactive Folder */}
+        <div className="flex flex-col items-center gap-6 shrink-0">
+          <div style={{ perspective: '600px' }}>
+            <Folder
+              color="#7c3aed"
+              size={2.5}
+              items={FOLDER_ITEMS}
+              className="drop-shadow-2xl"
+            />
+          </div>
+          <p className="text-xs text-center mt-4" style={{ color: 'rgba(168,85,247,0.6)' }}>
+            click to open
+          </p>
+        </div>
+
+        {/* RIGHT — Regal quote */}
+        <div
+          className="flex-1 flex flex-col justify-center min-w-0"
+          style={{ borderLeft: '1px solid rgba(168,85,247,0.2)', paddingLeft: '2rem' }}
+        >
+          <blockquote className="relative">
+            {/* Large decorative quote mark */}
+            <span
+              className="absolute -top-8 -left-4 select-none pointer-events-none"
+              style={{
+                fontSize: '8rem',
+                lineHeight: 1,
+                color: 'rgba(124,58,237,0.2)',
+                fontFamily: 'Georgia, serif',
+              }}
+            >
+              "
+            </span>
+
+            <p
+              className="relative z-10 leading-relaxed"
+              style={{
+                fontFamily: '"Playfair Display", Georgia, "Times New Roman", serif',
+                fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
+                fontStyle: 'italic',
+                fontWeight: 600,
+                color: '#e9d5ff',
+                letterSpacing: '0.01em',
+              }}
+            >
+              The systems we build today
+              <br />
+              <span style={{ color: '#c084fc' }}>become the architecture</span>
+              <br />
+              of tomorrow's intelligence.
+            </p>
+
+            <footer className="mt-6">
+              <cite
+                style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontStyle: 'normal',
+                  fontSize: '0.875rem',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(168,85,247,0.7)',
+                  display: 'block',
+                }}
+              >
+                — Pooja Patel
+              </cite>
+              <div className="mt-2 h-px w-16" style={{ background: 'linear-gradient(90deg, #7c3aed, transparent)' }} />
+            </footer>
+          </blockquote>
+        </div>
       </div>
 
-      <div className="w-full flex justify-between items-end mt-auto mb-12">
-        <p className="font-inter text-sm text-slate-500 tracking-wider">
+      {/* Footer */}
+      <div className="w-full flex justify-between items-end mt-auto py-12">
+        <p className="font-inter text-xs" style={{ color: 'rgba(168,85,247,0.4)' }}>
           © {new Date().getFullYear()} Pooja Patel
         </p>
-        <p className="font-inter text-sm text-slate-500 tracking-wider hidden md:block">
+        <p className="font-inter text-xs hidden md:block" style={{ color: 'rgba(168,85,247,0.4)' }}>
           Built with Gatsby &amp; Framer Motion
         </p>
       </div>

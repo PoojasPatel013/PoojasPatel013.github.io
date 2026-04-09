@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,11 +6,40 @@
 
 @layer base {
   body {
-    @apply bg-offwhite text-slate-800 font-inter antialiased overflow-x-hidden;
+    background-color: #0d0118;
+    color: #e9d5ff;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-outfit;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* Neon purple ambient glow in the background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -30vh;
+    left: 10vw;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(ellipse, rgba(147,51,234,0.25) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -20vh;
+    right: 5vw;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(ellipse, rgba(192,38,211,0.18) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
   }
 }
 
@@ -19,5 +48,21 @@
     min-height: 100vh;
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  /* Text utilities for the dark background */
+  .text-brand {
+    color: #e9d5ff;
+  }
+  .text-brand-muted {
+    color: #c084fc;
+  }
+  .text-brand-faint {
+    color: rgba(233, 213, 255, 0.4);
+  }
+
+  /* Neon glow utility */
+  .glow-purple {
+    text-shadow: 0 0 20px rgba(168,85,247,0.5), 0 0 40px rgba(168,85,247,0.2);
   }
 }
