@@ -12,7 +12,7 @@ function FlowingMenu({
 }) {
   return (
     <div className="w-full h-full overflow-hidden" style={{ backgroundColor: bgColor }}>
-      <nav className="flex flex-col h-full m-0 p-0">
+      <nav className="flex flex-col h-full m-0 p-0 justify-around gap-8 md:gap-16 my-12" style={{ minHeight: '80vh' }}>
         {items.map((item, idx) => (
           <MenuItem
             key={idx}
@@ -120,7 +120,7 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
       style={{ borderTop: isFirst ? 'none' : `1px solid ${borderColor}` }}
     >
       <a
-        className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-[6vh] md:text-[8vh]"
+        className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-black text-[8vh] md:text-[12vh]"
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -136,9 +136,9 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
         <div className="h-full w-fit flex" ref={marqueeInnerRef}>
           {[...Array(repetitions)].map((_, idx) => (
             <div className="marquee-part flex items-center flex-shrink-0" key={idx} style={{ color: marqueeTextColor }}>
-              <span className="whitespace-nowrap uppercase font-normal text-[6vh] md:text-[8vh] leading-[1] px-[2vw]">{text}</span>
+              <span className="whitespace-nowrap uppercase font-normal text-[8vh] md:text-[12vh] leading-[1] px-[3vw]">{text}</span>
               <div
-                className="w-[250px] md:w-[350px] h-[10vh] md:h-[14vh] my-[1em] mx-[3vw] py-[1em] rounded-[60px] bg-cover bg-center"
+                className="w-[300px] md:w-[500px] h-[15vh] md:h-[20vh] my-[1em] mx-[4vw] py-[1em] rounded-[100px] bg-cover bg-center"
                 style={{ backgroundImage: `url(${image})` }}
               />
             </div>

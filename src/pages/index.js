@@ -20,18 +20,7 @@ const IndexPage = () => {
       </Helmet>
 
       {/* Fixed glass lens overlay — follows cursor across ALL sections */}
-      {isBrowser && (
-        <FluidGlass
-          mode="lens"
-          lensProps={{
-            scale: 0.25,
-            ior: 1.15,
-            thickness: 5,
-            chromaticAberration: 0.1,
-            anisotropy: 0.01,
-          }}
-        />
-      )}
+
 
       {/* Hamburger menu overlay */}
       <StaggeredMenu />
@@ -41,6 +30,23 @@ const IndexPage = () => {
         <HeroSection />
         <SkillsSection />
         <ProjectsSection />
+
+        {/* ReactBits FluidGlass demo block as requested */}
+        {isBrowser && (
+          <div style={{ height: '800px', position: 'relative' }} className="w-full bg-[#5227ff] my-12">
+            <FluidGlass
+              mode="lens"
+              lensProps={{
+                scale: 0.25,
+                ior: 1.15,
+                thickness: 5,
+                chromaticAberration: 0.1,
+                anisotropy: 0.01
+              }}
+            />
+          </div>
+        )}
+
         <ExperienceSection />
         <ContactSection />
       </main>
