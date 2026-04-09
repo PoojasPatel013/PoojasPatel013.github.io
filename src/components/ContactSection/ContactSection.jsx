@@ -50,10 +50,10 @@ const ContactSection = () => {
 
       {/* Header */}
       <div className="mt-24 mb-16">
-        <h2 className="font-outfit text-5xl md:text-7xl font-black tracking-tighter" style={{ color: '#e9d5ff' }}>
-          Connect<span style={{ color: '#7c3aed' }}>.</span>
+        <h2 className="font-outfit text-5xl md:text-7xl font-black tracking-tighter" style={{ color: '#1e293b' }}>
+          Connect<span style={{ color: '#d946ef' }}>.</span>
         </h2>
-        <p className="font-inter text-base mt-2" style={{ color: 'rgba(196,148,255,0.6)' }}>
+        <p className="font-inter text-base mt-2" style={{ color: '#64748b' }}>
           Let's build something exceptional together.
         </p>
       </div>
@@ -68,9 +68,10 @@ const ContactSection = () => {
           <div
             className="rounded-2xl p-6 font-mono text-sm"
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(168,85,247,0.2)',
+              background: 'rgba(255,255,255,0.6)',
+              border: '1px solid rgba(192,132,252,0.3)',
               backdropFilter: 'blur(12px)',
+              boxShadow: '0 10px 40px rgba(192, 132, 252, 0.1)',
             }}
           >
             {/* Terminal chrome */}
@@ -78,17 +79,17 @@ const ContactSection = () => {
               <div className="w-3 h-3 rounded-full" style={{ background: '#ff5f57' }} />
               <div className="w-3 h-3 rounded-full" style={{ background: '#febc2e' }} />
               <div className="w-3 h-3 rounded-full" style={{ background: '#28c840' }} />
-              <span className="ml-3 text-xs" style={{ color: 'rgba(196,148,255,0.4)' }}>pooja@portfolio ~ </span>
+              <span className="ml-3 text-xs" style={{ color: '#94a3b8' }}>pooja@portfolio ~ </span>
             </div>
 
             {CLI_LINES.map((line, i) => (
               <div key={i} className="mb-3">
                 <div className="flex items-center gap-2">
-                  <span style={{ color: '#7c3aed' }}>❯</span>
-                  <span style={{ color: '#e9d5ff' }}>{line.cmd}</span>
+                  <span style={{ color: '#c084fc' }}>❯</span>
+                  <span style={{ color: '#334155' }}>{line.cmd}</span>
                 </div>
                 {line.out && (
-                  <div className="mt-1 ml-5" style={{ color: 'rgba(196,148,255,0.7)' }}>{line.out}</div>
+                  <div className="mt-1 ml-5" style={{ color: '#64748b' }}>{line.out}</div>
                 )}
               </div>
             ))}
@@ -102,27 +103,27 @@ const ContactSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group transition-all duration-300"
-                  style={{ color: 'rgba(196,148,255,0.8)' }}
+                  style={{ color: '#64748b' }}
                 >
-                  <span style={{ color: '#7c3aed' }}>├─</span>
-                  <span className="group-hover:text-white transition-colors" style={{ color: 'rgba(196,148,255,0.9)' }}>
+                  <span style={{ color: '#c084fc' }}>├─</span>
+                  <span className="group-hover:text-purple-600 transition-colors" style={{ color: '#475569' }}>
                     {s.icon}
                   </span>
                   <span
                     className="font-sans font-semibold tracking-wide group-hover:underline"
-                    style={{ color: 'rgba(233,213,255,0.9)', textDecorationColor: '#7c3aed' }}
+                    style={{ color: '#334155', textDecorationColor: '#c084fc' }}
                   >
                     {s.label}
                   </span>
-                  <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-xs" style={{ color: '#7c3aed' }}>↗</span>
+                  <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-xs" style={{ color: '#c084fc' }}>↗</span>
                 </a>
               ))}
             </div>
 
             {/* Blinking cursor */}
             <div className="mt-4 flex items-center gap-2">
-              <span style={{ color: '#7c3aed' }}>❯</span>
-              <span className="inline-block w-2 h-4 animate-pulse" style={{ background: '#a855f7' }} />
+              <span style={{ color: '#c084fc' }}>❯</span>
+              <span className="inline-block w-2 h-4 animate-pulse" style={{ background: '#c084fc' }} />
             </div>
           </div>
         </div>
@@ -141,13 +142,13 @@ const ContactSection = () => {
             }}
           >
             <Folder
-              color="#7c3aed"
+              color="#d946ef" // Fuchsia color to pop against light bg
               size={2}
               items={FOLDER_ITEMS}
               className="drop-shadow-2xl"
             />
           </div>
-          <p className="text-xs text-center" style={{ color: 'rgba(168,85,247,0.6)' }}>
+          <p className="text-xs text-center" style={{ color: '#94a3b8' }}>
             click to open
           </p>
         </div>
@@ -155,7 +156,7 @@ const ContactSection = () => {
         {/* RIGHT — Regal quote */}
         <div
           className="flex-1 flex flex-col justify-center min-w-0"
-          style={{ borderLeft: '1px solid rgba(168,85,247,0.2)', paddingLeft: '2rem' }}
+          style={{ borderLeft: '1px solid rgba(192,132,252,0.3)', paddingLeft: '2rem' }}
         >
           <blockquote className="relative">
             {/* Large decorative quote mark */}
@@ -164,7 +165,7 @@ const ContactSection = () => {
               style={{
                 fontSize: '8rem',
                 lineHeight: 1,
-                color: 'rgba(124,58,237,0.2)',
+                color: 'rgba(217, 70, 239, 0.15)', // Light fuchsia quote mark
                 fontFamily: 'Georgia, serif',
               }}
             >
@@ -178,7 +179,7 @@ const ContactSection = () => {
                 fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
                 fontStyle: 'italic',
                 fontWeight: 600,
-                color: '#e9d5ff',
+                color: '#1e293b', // Dark plum/slate
                 letterSpacing: '0.01em',
               }}
             >
@@ -197,13 +198,13 @@ const ContactSection = () => {
                   fontSize: '0.875rem',
                   letterSpacing: '0.15em',
                   textTransform: 'uppercase',
-                  color: 'rgba(168,85,247,0.7)',
+                  color: '#64748b',
                   display: 'block',
                 }}
               >
                 — Pooja Patel
               </cite>
-              <div className="mt-2 h-px w-16" style={{ background: 'linear-gradient(90deg, #7c3aed, transparent)' }} />
+              <div className="mt-2 h-px w-16" style={{ background: 'linear-gradient(90deg, #d946ef, transparent)' }} />
             </footer>
           </blockquote>
         </div>
@@ -211,10 +212,10 @@ const ContactSection = () => {
 
       {/* Footer */}
       <div className="w-full flex justify-between items-end mt-auto py-12">
-        <p className="font-inter text-xs" style={{ color: 'rgba(168,85,247,0.4)' }}>
+        <p className="font-inter text-xs" style={{ color: '#94a3b8' }}>
           © {new Date().getFullYear()} Pooja Patel
         </p>
-        <p className="font-inter text-xs hidden md:block" style={{ color: 'rgba(168,85,247,0.4)' }}>
+        <p className="font-inter text-xs hidden md:block" style={{ color: '#94a3b8' }}>
           Built with Gatsby &amp; Framer Motion
         </p>
       </div>

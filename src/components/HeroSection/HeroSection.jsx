@@ -21,11 +21,11 @@ const HeroSection = () => {
 
       {/* Right Side (Typography) */}
       <div className="w-full md:w-1/2 flex flex-col justify-center">
-        <h1 className="font-outfit text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8" style={{ color: '#e9d5ff' }}>
-          Pooja<br/>Patel<span className="text-slate-400">.</span>
+        <h1 className="font-outfit text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8" style={{ color: '#1e293b' }}>
+          Pooja<br/>Patel<span style={{ color: '#d946ef' }}>.</span>
         </h1>
         
-        <div className="max-w-2xl font-inter text-lg md:text-xl text-slate-600 leading-relaxed font-light tracking-tight flex flex-wrap">
+        <div className="max-w-2xl font-inter text-lg md:text-xl leading-relaxed font-light tracking-tight flex flex-wrap" style={{ color: '#475569' }}>
           <BlurText 
             text="Computer Science undergraduate and aspiring Applied ML Systems Researcher with a robust foundation in core CS fundamentals, distributed architectures, and cybersecurity."
             animateBy="words"
@@ -33,7 +33,7 @@ const HeroSection = () => {
             delay={80}
             stepDuration={0.8}
             className="inline"
-            style={{ color: 'rgba(216,180,254,0.8)' }}
+            style={{ color: '#475569' }}
           />
         </div>
       </div>

@@ -1,31 +1,31 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-// Vibrant neon card color schemes
+// Distinct light theme gradients
 const CARD_THEMES = [
   {
-    bg: 'linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a855f7 100%)',
-    accent: '#e879f9',
-    text: '#fff',
-    sub: 'rgba(255,255,255,0.7)',
-    glow: 'rgba(168,85,247,0.4)',
-    ring: 'rgba(233,121,249,0.3)',
+    bg: 'linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #d8b4fe 100%)', // Grape/Orchid (Project 1)
+    accent: '#f5eef8',
+    text: '#ffffff',
+    sub: 'rgba(255,255,255,0.9)',
+    glow: 'rgba(168,85,247,0.3)',
+    ring: 'rgba(192,132,252,0.5)',
   },
   {
-    bg: 'linear-gradient(135deg, #831843 0%, #db2777 50%, #f472b6 100%)',
-    accent: '#fb7185',
-    text: '#fff',
-    sub: 'rgba(255,255,255,0.7)',
-    glow: 'rgba(219,39,119,0.4)',
-    ring: 'rgba(244,114,182,0.3)',
+    bg: 'linear-gradient(135deg, #be185d 0%, #db2777 50%, #f472b6 100%)', // Magenta/Boysenberry (Project 2)
+    accent: '#f5eef8',
+    text: '#ffffff',
+    sub: 'rgba(255,255,255,0.9)',
+    glow: 'rgba(219,39,119,0.3)',
+    ring: 'rgba(244,114,182,0.5)',
   },
   {
-    bg: 'linear-gradient(135deg, #1e1b4b 0%, #3730a3 50%, #6366f1 100%)',
-    accent: '#a5b4fc',
-    text: '#fff',
-    sub: 'rgba(255,255,255,0.7)',
-    glow: 'rgba(99,102,241,0.4)',
-    ring: 'rgba(165,180,252,0.3)',
+    bg: 'linear-gradient(135deg, #701a75 0%, #a21caf 50%, #d946ef 100%)', // Plum/Jam (Project 3)
+    accent: '#f5eef8',
+    text: '#ffffff',
+    sub: 'rgba(255,255,255,0.9)',
+    glow: 'rgba(162,28,175,0.3)',
+    ring: 'rgba(217,70,239,0.5)',
   },
 ];
 

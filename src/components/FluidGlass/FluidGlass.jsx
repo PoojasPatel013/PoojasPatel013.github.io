@@ -45,7 +45,7 @@ const GlassLens = memo(function GlassLens({ mode, modeProps }) {
     geoWidthRef.current = geo.boundingBox.max.x - geo.boundingBox.min.x || 1;
   }, [nodes, geometryKey]);
 
-  // Internal scene: dark purple ambient — so glass creates a visible frosted-purple distortion over content
+  // Internal scene: adjust colors to match light lilac bg setting
   useEffect(() => {
     const meshes = [];
     const add = (color, opacity, pos, size = [30, 30]) => {
@@ -56,9 +56,9 @@ const GlassLens = memo(function GlassLens({ mode, modeProps }) {
       scene.add(mesh);
       meshes.push(mesh);
     };
-    add('#1a0033', 1, [0, 0, -8]);
-    add('#4c1d95', 0.4, [0, 0, -5]);
-    add('#7c3aed', 0.2, [-2, 1, -3]);
+    add('#f5eef8', 1, [0, 0, -8]); // Match the new global background
+    add('#f0e8ff', 0.5, [0, 0, -5]); // Light lavender hint
+    add('#e9d5ff', 0.2, [-2, 1, -3]); // Soft plum hint
     return () => { meshes.forEach(m => { scene.remove(m); m.geometry.dispose(); m.material.dispose(); }); };
   }, [scene]);
 
@@ -104,8 +104,8 @@ const GlassLens = memo(function GlassLens({ mode, modeProps }) {
           chromaticAberration={chromaticAberration ?? 0.1}
           transmission={1}
           roughness={0}
-          color="#c084fc"
-          attenuationColor="#7c3aed"
+          color="#f5eef8" // Clear/light glass
+          attenuationColor="#e9d5ff" // Light plum attenuation
           attenuationDistance={0.4}
           {...extraMat}
         />

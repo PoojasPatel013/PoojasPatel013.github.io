@@ -18,25 +18,25 @@ const SkillsSection = () => {
       {/* Section header — constrained */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full pt-32 pb-8">
         <header>
-          <h2 id="skills-heading" className="font-outfit text-4xl md:text-6xl font-black tracking-tighter" style={{ color: '#e9d5ff' }}>
-            Core Competencies<span style={{ color: '#7c3aed' }}>.</span>
+          <h2 id="skills-heading" className="font-outfit text-4xl md:text-6xl font-black tracking-tighter" style={{ color: '#1e293b' }}>
+            Core Competencies<span style={{ color: '#d946ef' }}>.</span>
           </h2>
-          <p className="font-inter text-xl font-light mt-4" style={{ color: 'rgba(196,148,255,0.6)' }}>
+          <p className="font-inter text-xl font-light mt-4" style={{ color: '#64748b' }}>
             A curated stack refined through research and production-grade deployments.
           </p>
         </header>
       </div>
 
       {/* Flowing Menu — FULL WIDTH, no max-w constraint */}
-      <div className="w-full flex-1 min-h-[500px] relative">
+      <div className="w-full flex-1 min-h-[600px] relative">
         <FlowingMenu 
           items={SKILL_ITEMS}
           speed={15}
-          textColor="#e9d5ff"
+          textColor="#4a044e" // Dark plum text for visibility
           bgColor="transparent"
-          marqueeBgColor="#7c3aed"
+          marqueeBgColor="#c084fc" // Lilac marquee
           marqueeTextColor="#ffffff"
-          borderColor="rgba(168,85,247,0.3)"
+          borderColor="rgba(192, 132, 252, 0.4)" // Soft lilac border
         />
       </div>
     </section>

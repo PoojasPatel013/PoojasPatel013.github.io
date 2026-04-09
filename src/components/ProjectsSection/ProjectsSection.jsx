@@ -26,8 +26,8 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="relative w-full z-10 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-32">
-        <h2 className="font-outfit text-4xl md:text-6xl font-black tracking-tighter mb-[5vh]" style={{ color: '#e9d5ff' }}>
-          Systems I've Built<span style={{ color: '#7c3aed' }}>.</span>
+        <h2 className="font-outfit text-4xl md:text-6xl font-black tracking-tighter mb-[5vh]" style={{ color: '#1e293b' }}>
+          Systems I've Built<span style={{ color: '#d946ef' }}>.</span>
         </h2>
       </div>
       
