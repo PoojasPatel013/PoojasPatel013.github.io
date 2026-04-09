@@ -38,34 +38,51 @@ const ExperienceCard = ({ exp, index }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
-      className="bg-white rounded-[24px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-slate-100 flex flex-col gap-4 w-full md:w-[48%]"
+      className="rounded-[24px] p-8 flex flex-col gap-4 w-full md:w-[48%]"
+      style={{
+        background: 'rgba(124,58,237,0.08)',
+        border: '1px solid rgba(168,85,247,0.2)',
+        backdropFilter: 'blur(12px)',
+        boxShadow: '0 8px 32px rgba(88,28,195,0.15)',
+      }}
     >
       <div className="flex justify-between items-start">
-        <span className="font-outfit text-xs font-bold tracking-widest uppercase text-slate-400 bg-slate-100 px-3 py-1 rounded-full">
+        <span
+          className="font-outfit text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full"
+          style={{ color: '#c084fc', background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(168,85,247,0.2)' }}
+        >
           {exp.type}
         </span>
-        <span className="font-inter text-sm text-slate-400">{exp.period}</span>
+        <span className="font-inter text-sm" style={{ color: 'rgba(196,148,255,0.6)' }}>{exp.period}</span>
       </div>
       <div>
-        <h3 className="font-outfit text-2xl md:text-3xl font-black tracking-tight text-slate-800">
+        <h3 className="font-outfit text-2xl md:text-3xl font-black tracking-tight" style={{ color: '#e9d5ff' }}>
           {exp.role}
         </h3>
-        <p className="font-inter text-base font-medium text-slate-500">
+        <p className="font-inter text-base font-medium" style={{ color: '#c084fc' }}>
           {exp.company}
         </p>
       </div>
-      <div className="h-px w-full bg-slate-100 my-2" />
+      <div className="h-px w-full my-2" style={{ background: 'rgba(168,85,247,0.15)' }} />
       <ul className="flex flex-col gap-2">
         {exp.highlights.map((hlt, i) => (
-          <li key={i} className="font-inter text-sm md:text-base text-slate-600 font-light flex gap-3">
-            <span className="text-slate-300 mt-1">●</span>
+          <li key={i} className="font-inter text-sm md:text-base font-light flex gap-3" style={{ color: 'rgba(233,213,255,0.7)' }}>
+            <span style={{ color: '#7c3aed' }}>●</span>
             {hlt}
           </li>
         ))}
       </ul>
       <div className="flex flex-wrap gap-2 mt-auto pt-4">
         {exp.tags.map((tag) => (
-          <span key={tag} className="font-inter text-xs text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1 rounded-md">
+          <span
+            key={tag}
+            className="font-inter text-xs px-3 py-1 rounded-md"
+            style={{
+              color: '#c084fc',
+              background: 'rgba(124,58,237,0.1)',
+              border: '1px solid rgba(168,85,247,0.15)',
+            }}
+          >
             {tag}
           </span>
         ))}
@@ -76,12 +93,12 @@ const ExperienceCard = ({ exp, index }) => {
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="snap-section relative flex flex-col justify-center px-6 md:px-12 bg-offwhite min-h-screen">
+    <section id="experience" className="snap-section relative flex flex-col justify-center px-6 md:px-12 min-h-screen">
       <div className="max-w-6xl w-full mx-auto">
-        <h2 className="font-outfit text-4xl md:text-6xl font-black text-slate-800 tracking-tighter mb-12">
-          Professional Journey<span className="text-slate-400">.</span>
+        <h2 className="font-outfit text-4xl md:text-6xl font-black tracking-tighter mb-12" style={{ color: '#e9d5ff' }}>
+          Professional Journey<span style={{ color: '#7c3aed' }}>.</span>
         </h2>
-        
+
         <div className="flex flex-col md:flex-row gap-8 justify-between w-full">
           {EXPERIENCES.map((exp, i) => (
             <ExperienceCard key={exp.id} exp={exp} index={i} />

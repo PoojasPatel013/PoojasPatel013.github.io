@@ -128,16 +128,26 @@ const ContactSection = () => {
         </div>
 
         {/* CENTRE — Interactive Folder */}
-        <div className="flex flex-col items-center gap-6 shrink-0">
-          <div style={{ perspective: '600px' }}>
+        <div className="flex flex-col items-center justify-center gap-6 shrink-0">
+          <div
+            style={{
+              perspective: '800px',
+              transformStyle: 'preserve-3d',
+              width: '320px',
+              height: '280px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
             <Folder
               color="#7c3aed"
-              size={2.5}
+              size={2}
               items={FOLDER_ITEMS}
               className="drop-shadow-2xl"
             />
           </div>
-          <p className="text-xs text-center mt-4" style={{ color: 'rgba(168,85,247,0.6)' }}>
+          <p className="text-xs text-center" style={{ color: 'rgba(168,85,247,0.6)' }}>
             click to open
           </p>
         </div>
