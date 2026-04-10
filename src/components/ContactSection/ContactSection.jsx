@@ -1,4 +1,5 @@
 import React from 'react';
+import { withPrefix } from 'gatsby';
 import Folder from '../Folder/Folder';
 
 const SOCIALS = [
@@ -32,7 +33,7 @@ const SOCIALS = [
   },
 ];
 
-import { withPrefix } from 'gatsby';
+
 
 const FOLDER_ITEMS = [
   <span key="1" style={{ fontSize: 9, color: '#7c3aed', fontFamily: 'monospace' }}>portfolio.md</span>,
